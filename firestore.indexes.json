@@ -1,0 +1,7 @@
+{
+  "indexes": [],
+  "fieldOverrides": [
+    { "collectionGroup": "kingdoms", "fieldPath": "estates", "indexes": [] },
+    { "collectionGroup": "kingdoms", "fieldPath": "journal", "indexes": [] }
+  ]
+}

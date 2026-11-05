@@ -1,0 +1,50 @@
+{
+  "functions": [
+    {
+      "source": ".",
+      "codebase": "hearth-hollow",
+      "ignore": [
+        "img/**",
+        "dist/**",
+        "node_modules/**",
+        ".git/**",
+        ".github/**",
+        "*.zip",
+        "*test*",
+        "index.html",
+        "style.css",
+        "app.mjs",
+        "world.mjs",
+        "cloud.mjs",
+        "firebase-config.js",
+        "README.md",
+        "IMPLEMENTATION.md",
+        "TEST-RESULTS.md",
+        "gha-creds-*.json",
+        "service-account*.json",
+        "*serviceAccount*.json",
+        ".env*",
+        ".openai/**",
+        ".codex/**"
+      ]
+    }
+  ],
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "emulators": {
+    "auth": {
+      "port": 9099
+    },
+    "firestore": {
+      "port": 8080
+    },
+    "functions": {
+      "port": 5001
+    },
+    "ui": {
+      "enabled": true
+    }
+  }
+}

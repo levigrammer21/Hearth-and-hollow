@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no"
+    />
+    <meta name="theme-color" content="#f6f3e9" />
+    <meta
+      name="description"
+      content="A little estate. A shared kingdom. A cozy cooperative farming game for two."
+    />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="icon.svg" />
+    <link rel="apple-touch-icon" href="img/icon-192.png" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Hearth & Hollow — A little kingdom, together</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="Hearth and Hollow home"
+          ><span class="brand-mark" id="brandIcon"></span
+          ><span
+            >Hearth <i>&</i> Hollow<small
+              >A LITTLE KINGDOM, TOGETHER</small
+            ></span
+          ></a
+        >
+        <div class="top-actions">
+          <span id="saveStatus" class="save-state">Opening your estate</span
+          ><button
+            id="settingsBtn"
+            class="icon-btn"
+            aria-label="Settings"
+          ></button>
+        </div>
+      </header>
+      <main id="game">
+        <div class="estate-bar">
+          <div>
+            <span class="eyebrow" id="eyebrow"
+              >YOUR LITTLE CORNER OF THE KINGDOM</span
+            >
+            <h1 id="estateName">Willowbrook</h1>
+            <div class="estate-meta">
+              <span id="level">Level 1</span><span class="separator">·</span
+              ><span id="season">Early summer</span
+              ><span id="modeLabel" class="tag">Local practice</span>
+            </div>
+          </div>
+          <div class="wallet">
+            <button id="goldBtn" aria-label="Open inventory">
+              <span id="goldIcon"></span><strong id="gold">850</strong
+              ><small>GOLD</small></button
+            ><button id="storageBtn" aria-label="Open storage">
+              <span id="storageIcon"></span
+              ><strong id="storage">208 / 450</strong><small>STORAGE</small>
+            </button>
+          </div>
+        </div>
+        <div id="worldWrap">
+          <canvas
+            id="world"
+            aria-label="Your estate. Drag to explore, pinch to zoom, and tap to interact."
+            tabindex="0"
+          ></canvas>
+          <div class="map-shade"></div>
+          <div class="map-top">
+            <div class="weather">
+              <span id="sunIcon"></span
+              ><span
+                >A lovely day to grow<small id="worldCaption"
+                  >Drag to explore · tap to tend</small
+                ></span
+              >
+            </div>
+            <button id="visitBtn" class="visit-btn"></button>
+          </div>
+          <div class="zoom-controls">
+            <button id="zoomIn" aria-label="Zoom in">+</button
+            ><button id="recenter" aria-label="Center estate"></button
+            ><button id="zoomOut" aria-label="Zoom out">−</button>
+          </div>
+          <div id="placementBar" hidden></div>
+          <div class="map-bottom">
+            <div class="harvest-hint" id="mapHint">
+              <span class="live-dot"></span> Your estate is growing, even while
+              you’re away
+            </div>
+            <div class="map-quick">
+              <button id="harvestBtn" class="primary"></button
+              ><button id="plantBtn" class="cream"></button>
+            </div>
+          </div>
+        </div>
+        <div class="below-map">
+          <button id="objective" class="objective"></button>
+          <div class="progress-card">
+            <div>
+              <span id="xpLabel">A new beginning</span
+              ><strong id="xpValue">0 / 80 XP</strong>
+            </div>
+            <div class="progress-track"><i id="xpFill"></i></div>
+            <p id="kingdomBoost">Every little thing helps your estate grow.</p>
+          </div>
+        </div>
+        <nav class="dock" aria-label="Game navigation"></nav>
+        <footer>
+          <span>Made for slower days & a little magic.</span
+          ><span id="version"></span>
+        </footer>
+      </main>
+    </div>
+    <div id="scrim" hidden></div>
+    <section
+      id="drawer"
+      class="drawer"
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="drawerTitle"
+    >
+      <div class="drawer-handle"></div>
+      <div class="drawer-head">
+        <div>
+          <span id="drawerEyebrow" class="eyebrow">MAKE YOURSELF AT HOME</span>
+          <h2 id="drawerTitle"></h2>
+        </div>
+        <button
+          id="closeDrawer"
+          class="icon-btn"
+          aria-label="Close panel"
+        ></button>
+      </div>
+      <div id="drawerTabs" class="tabs"></div>
+      <div id="drawerContent" class="drawer-content"></div>
+    </section>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <div id="welcome" hidden>
+      <div class="welcome-card">
+        <span class="eyebrow">WELCOME TO YOUR LITTLE KINGDOM</span>
+        <div class="welcome-art"></div>
+        <h2>A home to grow.<br />A kingdom to share.</h2>
+        <p>
+          Plant something lovely. Make a little magic.<br />Build a life here,
+          together.
+        </p>
+        <button id="startLocal" class="primary">
+          Step into Willowbrook <span>→</span></button
+        ><button id="startCloud" class="outline">Sign in with Google</button
+        ><small id="welcomeNote"
+          >Local practice is ready to play. Google sign-in connects your private
+          kingdom after Firebase setup.</small
+        >
+      </div>
+    </div>
+    <script type="module" src="app.mjs"></script>
+  </body>
+</html>
